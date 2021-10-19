@@ -1,1 +1,6 @@
-<p>jokes works!</p>
+<ul *ngFor="let joke of jokes">
+  <li>
+    <img [src]="joke.icon_url" alt="{{joke.value}}" />
+    {{joke.value}}
+  </li>
+</ul>
