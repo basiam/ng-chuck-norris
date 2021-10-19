@@ -2,5 +2,9 @@
   <li>
     <img [src]="joke.icon_url" alt="{{joke.value}}" />
     {{joke.value}}
+
+    <ul *ngFor="let category of joke.categories">
+      <li>{{category}}</li>
+    </ul>
   </li>
 </ul>
