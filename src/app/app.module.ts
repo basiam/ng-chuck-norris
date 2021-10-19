@@ -9,6 +9,8 @@ import { JokesComponent } from './jokes/jokes.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { JokeCardComponent } from './jokes/joke-card/joke-card.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { JokeCardComponent } from './jokes/joke-card/joke-card.component';
     HeaderComponent,
     FooterComponent,
     JokesComponent,
-    JokeCardComponent
+    JokeCardComponent,
+    LoadingSpinnerComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

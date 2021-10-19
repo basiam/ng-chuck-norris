@@ -1,8 +1,15 @@
-<ul *ngFor="let joke of jokes">
-  <app-joke-card [joke]="joke"></app-joke-card>
-</ul>
+<app-loading-spinner *ngIf="jokesAreLoading"></app-loading-spinner>
+<div *ngIf="!jokesAreLoading">
+  <ul *ngFor="let joke of jokes">
+    <app-joke-card [joke]="joke"></app-joke-card>
+  </ul>
+</div>
 
 <hr />
-<ul *ngFor="let joke of oldJokes">
-  <app-joke-card [joke]="joke"></app-joke-card>
-</ul>
+
+<app-loading-spinner *ngIf="oldJokesAreLoading"></app-loading-spinner>
+<div *ngIf="!oldJokesAreLoading">
+  <ul *ngFor="let joke of oldJokes">
+    <app-joke-card [joke]="joke"></app-joke-card>
+  </ul>
+</div>

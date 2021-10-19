@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { Joke } from './joke.model';
-import { JokesService } from './jokes.service';
+import { JokesAPIService } from './jokes-api.service';
+import { JokesSeenService } from './jokes-seen.service';
 
 @Component({
   selector: 'app-jokes',
@@ -14,15 +15,27 @@ export class JokesComponent implements OnInit, OnDestroy {
   jokes: Joke[] = [];
   oldJokes: Joke[] = [];
   subscription: Subscription;
-  constructor(private jokesService: JokesService, private router: Router) { }
+  jokesAreLoading: boolean = true;
+  oldJokesAreLoading: boolean = true;
+
+  constructor(
+    private jokesAPIService: JokesAPIService,
+    private jokesSeenService: JokesSeenService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-
-    this.subscription = this.jokesService.jokesLoaded.subscribe((jokes: Joke[]) => {
-      this.jokes = jokes;
-    });
     const category = this.router.url.split('/')[1];
-    this.jokesService.fetchJokes(category);
+
+    this.subscription = this.jokesAPIService.jokesLoaded.subscribe((jokes: Joke[]) => {
+      this.jokes = jokes;
+      this.jokesAreLoading = false;
+      this.jokesSeenService.saveJokes(category, jokes);
+    });
+
+    this.jokesAPIService.fetchJokes(category);
+    this.oldJokes = this.jokesSeenService.getJokes(category);
+    this.oldJokesAreLoading = false;
 
   }
 
