@@ -1,10 +1,8 @@
 <ul *ngFor="let joke of jokes">
-  <li>
-    <img [src]="joke.icon_url" alt="{{joke.value}}" />
-    {{joke.value}}
+  <app-joke-card [joke]="joke"></app-joke-card>
+</ul>
 
-    <ul *ngFor="let category of joke.categories">
-      <li>{{category}}</li>
-    </ul>
-  </li>
+<hr />
+<ul *ngFor="let joke of oldJokes">
+  <app-joke-card [joke]="joke"></app-joke-card>
 </ul>

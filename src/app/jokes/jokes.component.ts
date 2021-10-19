@@ -12,17 +12,17 @@ import { JokesService } from './jokes.service';
 })
 export class JokesComponent implements OnInit, OnDestroy {
   jokes: Joke[] = [];
+  oldJokes: Joke[] = [];
   subscription: Subscription;
   constructor(private jokesService: JokesService, private router: Router) { }
 
   ngOnInit(): void {
 
-    this.subscription = this.jokesService.jokesLoaded.subscribe(
-      (jokes: Joke[]) => {
-        this.jokes = jokes;
-      }
-    );
-    this.jokesService.fetchJokes(this.router.url.split('/')[1]);
+    this.subscription = this.jokesService.jokesLoaded.subscribe((jokes: Joke[]) => {
+      this.jokes = jokes;
+    });
+    const category = this.router.url.split('/')[1];
+    this.jokesService.fetchJokes(category);
 
   }
 

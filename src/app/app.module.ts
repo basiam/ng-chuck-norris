@@ -8,14 +8,16 @@ import { HomeComponent } from './home/home.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { JokeCardComponent } from './jokes/joke-card/joke-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    JokesComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    JokesComponent,
+    JokeCardComponent
   ],
   imports: [
     BrowserModule,
