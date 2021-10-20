@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h2><span>Latest jokes</span></h2>
+  <h2><span>Latest facts</span> about {{category}}</h2>
   <app-error-message [errorMessage]="error"></app-error-message>
 
   <app-loading-spinner *ngIf="jokesAreLoading"></app-loading-spinner>
@@ -12,7 +12,7 @@
 
   <div *ngIf="oldJokes.length > 0">
     <hr />
-    <h2><span>Old jokes</span></h2>
+    <h2><span>Old facts</span></h2>
     <app-loading-spinner *ngIf="oldJokesAreLoading"></app-loading-spinner>
     <div *ngIf="!oldJokesAreLoading" class="container">
       <div *ngFor="let joke of oldJokes let i = index">

@@ -14,11 +14,11 @@ $background-color: #f7f7f7;
   }
   .container {
     display: grid;
+    margin: 0 auto 1em;
+    padding: 0 10px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 20px;
     grid-template-rows: max-content;
-    margin-bottom: 1em;
-
   }
 
   .card {
