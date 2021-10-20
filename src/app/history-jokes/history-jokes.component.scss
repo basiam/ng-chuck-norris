@@ -1,68 +1,76 @@
-$font-color: #444;
-$border-color: red;
-$background-color: #f7f7f7;
-
+@import '../../assets/styles/variables.scss';
 
 .history {
   h2 {
-    color: #e63946;
-    font-size: 2em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    text-align: center;
+    color: $font-color;
+    font-size: 150%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    span {
+      border-bottom: 4px solid $red-color;
+    }
   }
   .container {
     display: flex;
     flex-direction: row;
-    margin: 0 auto 20px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
     column-gap: 2em;
-    row-gap: 1em
+    row-gap: 1em;
   }
 
+  @media only screen and (max-width: 1300px) {
+    .food .container {
+      justify-content: space-around;
+    }
+  }
   .card {
-    color:#000;
+    color: #000;
     flex: auto;
     background-color: #fff;
     border: 1px solid #e6e6e6;
     overflow: hidden;
     max-width: 400px;
-    min-height: 300px;
+    height: 150px;
     align-items: stretch;
-
-
-    .img-holder {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-width: 200px;
-      min-height: 200px;
-      height: 100%;
-       -webkit-filter: grayscale(1);
-      filter: grayscale(1);
-
-      &:hover {
-        -webkit-filter: grayscale(0);
-        filter: none;
+    border-radius: 1em;
+    position: relative;
+    &:hover {
+      .info p {
+          position: absolute;
+          background-image: url('/assets/images/gifs/serious.gif');
+          background-position: center center;
+          top: 0;
+          left: 0;
+          max-width: 400px;
+          height: 150px;
+          a { display: none }
       }
     }
 
-    .info {
-      padding: 20px;
+    .img-holder {
+      display: none;
+    }
+
+    .info span {
+      display: block;
+      padding: 1.5rem 1rem;
       font-size: 14px;
       line-height: 150%;
     }
+    .info p {
+      margin: 0px;
+      background: red;
+      padding: 0.5em 0.5rem 0.5rem 1rem;
+      width: 100%;
+    }
     .category-link, .category-link:visited {
-      letter-spacing: 3px;
-      color: #555;
+      color: #fff;
       text-decoration: none;
       margin-right: 5px;
-      &:hover {
-        text-decoration: underline;
-      }
+
     }
   }
-
 
   .loadingio-spinner-pulse-rvsxbaddnxr .ldio-lpebeydfbs {
     div:nth-child(1) {
@@ -74,7 +82,9 @@ $background-color: #f7f7f7;
     }
 
     div:nth-child(3) {
-      background: $border-color !important;
+      background: $red-color !important;
     }
   }
+
 }
+

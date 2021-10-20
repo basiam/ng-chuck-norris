@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-animal-jokes',
@@ -6,11 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./animal-jokes.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AnimalJokesComponent implements OnInit {
+export class AnimalJokesComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

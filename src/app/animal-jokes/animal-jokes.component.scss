@@ -1,13 +1,11 @@
-$font-color: #444;
-$border-color: #fc0;
-$background-color: #f7f7f7;
+@import '../../assets/styles/variables.scss';
 
 .animal {
   h2 {
     color: $font-color;
     font-size: 2em;
-    margin-top: 1rem;
-    margin-bottom: 1em;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     span {
       border-bottom: 4px solid $border-color;
     }
@@ -19,6 +17,7 @@ $background-color: #f7f7f7;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 20px;
     grid-template-rows: max-content;
+    overflow: hidden;
   }
 
   .card {
@@ -47,7 +46,7 @@ $background-color: #f7f7f7;
     }
     .category-link, .category-link:visited {
       letter-spacing: 3px;
-      color: #555;
+      color: #999;
       text-decoration: none;
       margin-right: 0.5rem;
       &:hover {

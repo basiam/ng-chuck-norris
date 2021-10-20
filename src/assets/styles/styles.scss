@@ -1,8 +1,7 @@
-$background-color: #fdfffc;
-$header-color: #011627;
-$footer-color:  #e71d36;
+
 
 @import '~normalize.css';
+@import './variables.scss';
 
 html {
   position: relative;
@@ -11,9 +10,13 @@ html {
 body {
   margin-bottom: 6rem;
 	width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: #f1f1f1;
   text-rendering: optimizeLegibility;
+}
+h1, h2 {
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
 }
 
 .wrapper {
@@ -22,11 +25,11 @@ body {
 }
 
 .error-message-box {
+  width: 964px;
   margin: 0 auto;
-  width: 50%;
 
   .error-message-text {
-    color:red;
+    color: $red-color;
   }
 
   &.error-not-found {

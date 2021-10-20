@@ -11,8 +11,6 @@ export class Joke {
     const category = this.categories[0];
     const index = 200 + offset;
     switch (category) {
-      case 'history':
-        return 'https://placeimg.com/400/' + index + '/arch';
       case 'animal':
         return 'http://placekitten.com/' + index + '/' + index;
       case 'food':

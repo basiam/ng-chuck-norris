@@ -1,13 +1,22 @@
+@import '../../assets/styles/variables.scss';
+
 h1 {
-  text-align: center;
-  margin-top: 3rem;
-  color: #2ec4b6;
+ text-align: center;
+  color: $background-color;
+  font-size: 3em;
+  /* text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc; */
+  background:$red-color;
+  padding: 1rem;
+  width: 50%;
+  margin: 3rem auto 5rem;
+  display: block;
 }
 
 ul {
   display: flex;
   flex-direction: row;
-  margin: 3rem 0;
+  flex-wrap: wrap;
+  margin: 3rem 1rem;
   padding: 0;
   justify-content: space-around;
   li {
@@ -24,12 +33,12 @@ ul {
   text-decoration: none;
   h3 {
     padding: 1em;
-    color: #fc0;;
     text-decoration: none;
     text-align: center;
+    color: $font-color;
 
     &:hover {
-       color:red;
+       color: $red-color;
        text-decoration: underline;
     }
 
@@ -45,8 +54,6 @@ ul {
   min-height: 200px;
   height: 100%;
 
-
-
   &.animal-link {
     background-image:url('/assets/images/animal.jpg');
   }
@@ -61,7 +68,14 @@ ul {
 
 .chuck-info {
   margin: 3em;
-  padding: 1em;
-  background: #fff;
-  border: 1px solid grey;
+  columns: auto 5;
+  overflow: hidden;
+  img {
+    max-width: 220px;
+  }
 }
+ @media only screen and (max-width: 1300px) {
+    .chuck-info {
+      columns: auto auto;
+    }
+  }
