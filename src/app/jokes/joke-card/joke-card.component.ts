@@ -8,6 +8,7 @@ import { Joke } from '../joke.model';
 })
 export class JokeCardComponent implements OnInit {
   @Input() joke: Joke;
+  @Input() cardIndex: number;
 
   constructor() { }
 

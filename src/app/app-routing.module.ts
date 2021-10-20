@@ -9,7 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { JokesComponent } from './jokes/jokes.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'animal', component: AnimalJokesComponent },
   { path: 'history', component: HistoryJokesComponent },
   { path: 'food', component: FoodJokesComponent },

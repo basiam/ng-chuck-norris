@@ -29,10 +29,11 @@ export class JokesComponent implements OnInit, OnDestroy {
     const category = this.router.url.split('/')[1];
 
     this.subscription = this.jokesAPIService.jokesLoaded
-      .subscribe((jokes: Joke[]) => {
-        this.jokes = jokes;
-        this.jokesAreLoading = false;
-      },
+      .subscribe(
+        (jokes: Joke[]) => {
+          this.jokes = jokes;
+          this.jokesAreLoading = false;
+        },
         (errorMessage) => {
           this.jokesAreLoading = false;
           this.error = errorMessage;

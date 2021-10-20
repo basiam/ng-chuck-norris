@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-history-jokes',
-  template: '<app-jokes></app-jokes>',
-  styleUrls: ['./history-jokes.component.scss']
+  template: '<div class="history"><app-jokes></app-jokes></div>',
+  styleUrls: ['./history-jokes.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HistoryJokesComponent implements OnInit {
 
