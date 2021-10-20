@@ -1,0 +1,62 @@
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  color: #2ec4b6;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  margin: 3rem 0;
+  padding: 0;
+  justify-content: space-around;
+  li {
+     list-style-type: none;
+  }
+}
+
+.home-link {
+  display: block;
+  flex: auto;
+  align-items: stretch;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  text-decoration: none;
+  h3 {
+    padding: 1em;
+    color: #ff9f1c;
+    text-decoration: none;
+    text-align: center;
+
+  }
+}
+
+.home-link-image {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 300px;
+  min-height: 200px;
+  height: 100%;
+
+
+
+  &.animal-link {
+    background-image:url('/assets/images/animal.jpg');
+  }
+  &.food-link {
+   background-image:url('/assets/images/food.jpeg');
+  }
+
+  &.history-link {
+    background-image:url('/assets/images/history.jpeg');
+  }
+}
+
+.chuck-info {
+  margin: 3em;
+  padding: 1em;
+  background: #fff;
+  border: 1px solid grey;
+}

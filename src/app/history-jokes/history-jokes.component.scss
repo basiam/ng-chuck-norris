@@ -36,8 +36,20 @@ body {
     align-items: stretch;
 
 
-    img {
-      display: block;
+    .img-holder {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-width: 200px;
+      min-height: 200px;
+      height: 100%;
+       -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+
+      &:hover {
+        -webkit-filter: grayscale(0);
+        filter: none;
+      }
     }
 
     .info {

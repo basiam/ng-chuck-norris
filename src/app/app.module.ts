@@ -16,7 +16,6 @@ import { FoodJokesComponent } from './food-jokes/food-jokes.component';
 import { HistoryJokesComponent } from './history-jokes/history-jokes.component';
 import { ErrorMessageComponent } from './error-message/error-message.component';
 import { PlacekittenPipe } from './shared/placekitten/placekitten.pipe';
-import { PlaceimgPipe } from './shared/placeimg/placeimg.pipe';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { PlaceimgPipe } from './shared/placeimg/placeimg.pipe';
     FoodJokesComponent,
     HistoryJokesComponent,
     ErrorMessageComponent,
-    PlacekittenPipe,
-    PlaceimgPipe
+    PlacekittenPipe
   ],
   imports: [
     BrowserModule,

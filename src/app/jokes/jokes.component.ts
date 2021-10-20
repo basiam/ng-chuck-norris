@@ -31,6 +31,7 @@ export class JokesComponent implements OnInit, OnDestroy {
     this.subscription = this.jokesAPIService.jokesLoaded
       .subscribe(
         (jokes: Joke[]) => {
+          console.log(jokes);
           this.jokes = jokes;
           this.jokesAreLoading = false;
         },

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'animal', component: AnimalJokesComponent },
   { path: 'history', component: HistoryJokesComponent },
   { path: 'food', component: FoodJokesComponent },
-  { path: 'traveler', component: JokesComponent },
+  { path: 'error', component: JokesComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 

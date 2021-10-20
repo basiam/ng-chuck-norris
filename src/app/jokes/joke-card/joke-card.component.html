@@ -1,8 +1,11 @@
-<div class="card">
-  <img src="{{ joke.categories[0] | placeimg: cardIndex }}" alt="{{joke.value}}" />
+<div class="card" [ngClass]="cardIndex % 2 === 0 ? 'even' : 'odd'">
+  <div [ngStyle]="{'background-image': 'url(' + joke.imagePath(cardIndex) + ')'}" class="img-holder">
+  </div>
   <div class="info">
     <p *ngFor="let category of joke.categories">
-      <a routerLink="/{{category}}" class="category-link">{{category | uppercase }}</a>
+      <a routerLink="/{{category}}" class="category-link">
+        {{category | uppercase }}
+      </a>
     </p>
     {{joke.value}}
   </div>

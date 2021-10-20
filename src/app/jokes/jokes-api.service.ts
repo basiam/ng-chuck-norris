@@ -30,7 +30,7 @@ export class JokesAPIService {
           this.jokesSeenService.saveJokes(category, this.getJokes());
         }),
       ).subscribe((joke: Joke) => {
-        this.jokes.push(joke);
+        this.jokes.push(new Joke(joke.categories, joke.created_at, joke.id, joke.value));
       }, (error) => {
         this.jokesLoaded.error(error);
       });
