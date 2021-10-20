@@ -17,6 +17,7 @@ export class JokesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   jokesAreLoading: boolean = true;
   oldJokesAreLoading: boolean = true;
+  error: string;
 
   constructor(
     private jokesAPIService: JokesAPIService,
@@ -27,11 +28,16 @@ export class JokesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const category = this.router.url.split('/')[1];
 
-    this.subscription = this.jokesAPIService.jokesLoaded.subscribe((jokes: Joke[]) => {
-      this.jokes = jokes;
-      this.jokesAreLoading = false;
-      this.jokesSeenService.saveJokes(category, jokes);
-    });
+    this.subscription = this.jokesAPIService.jokesLoaded
+      .subscribe((jokes: Joke[]) => {
+        this.jokes = jokes;
+        this.jokesAreLoading = false;
+      },
+        (errorMessage) => {
+          this.jokesAreLoading = false;
+          this.error = errorMessage;
+        }
+      );
 
     this.jokesAPIService.fetchJokes(category);
     this.oldJokes = this.jokesSeenService.getJokes(category);

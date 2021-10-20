@@ -11,9 +11,8 @@ export class JokesSeenService {
 
   getJokes(category: string) {
     const oldJokes = localStorage.getItem(category);
-    if (!oldJokes) {
-      return [];
-    }
+    if (!oldJokes) return [];
+
     this.jokesByCategory[category] = JSON.parse(oldJokes).map((x: Joke) => x);
     return this.jokesByCategory[category];
   }

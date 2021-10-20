@@ -1,3 +1,5 @@
+<h2>Latest jokes</h2>
+<app-error-message [errorMessage]="error"></app-error-message>
 <app-loading-spinner *ngIf="jokesAreLoading"></app-loading-spinner>
 <div *ngIf="!jokesAreLoading">
   <ul *ngFor="let joke of jokes">
@@ -6,6 +8,8 @@
 </div>
 
 <hr />
+<h2>Old jokes</h2>
+
 
 <app-loading-spinner *ngIf="oldJokesAreLoading"></app-loading-spinner>
 <div *ngIf="!oldJokesAreLoading">

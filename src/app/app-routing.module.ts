@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnimalJokesComponent } from './animal-jokes/animal-jokes.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { FoodJokesComponent } from './food-jokes/food-jokes.component';
+import { HistoryJokesComponent } from './history-jokes/history-jokes.component';
 
 import { HomeComponent } from './home/home.component';
 import { JokesComponent } from './jokes/jokes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'animal', component: JokesComponent },
-  { path: 'travel', component: JokesComponent },
-  { path: 'food', component: JokesComponent },
+  { path: 'animal', component: AnimalJokesComponent },
+  { path: 'history', component: HistoryJokesComponent },
+  { path: 'food', component: FoodJokesComponent },
+  { path: 'traveler', component: JokesComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 

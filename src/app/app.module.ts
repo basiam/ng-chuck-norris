@@ -11,6 +11,10 @@ import { FooterComponent } from './footer/footer.component';
 import { JokeCardComponent } from './jokes/joke-card/joke-card.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AnimalJokesComponent } from './animal-jokes/animal-jokes.component';
+import { FoodJokesComponent } from './food-jokes/food-jokes.component';
+import { HistoryJokesComponent } from './history-jokes/history-jokes.component';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     JokesComponent,
     JokeCardComponent,
     LoadingSpinnerComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    AnimalJokesComponent,
+    FoodJokesComponent,
+    HistoryJokesComponent,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,
