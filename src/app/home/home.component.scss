@@ -24,9 +24,14 @@ ul {
   text-decoration: none;
   h3 {
     padding: 1em;
-    color: #ff9f1c;
+    color: #fc0;;
     text-decoration: none;
     text-align: center;
+
+    &:hover {
+       color:red;
+       text-decoration: underline;
+    }
 
   }
 }

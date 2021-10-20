@@ -2,9 +2,6 @@ $font-color: #444;
 $border-color: red;
 $background-color: #f7f7f7;
 
-body {
-  background-color: $background-color;
-}
 
 .history {
   h2 {
@@ -81,16 +78,5 @@ body {
     div:nth-child(3) {
       background: $border-color !important;
     }
-  }
-}
-
-footer, header {
-  background-color: black;
-  color: #fff;
-  a {
-    color: #fff;
-  }
-  li.active a.nav-link {
-    color: $border-color !important;
   }
 }
