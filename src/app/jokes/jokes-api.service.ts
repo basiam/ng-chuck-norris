@@ -36,8 +36,9 @@ export class JokesAPIService {
   }
 
   fetchJoke(category: string) {
+    // hack to prevent Safari from catching request
     return this.http.get<JokeObject>(
-      'https://api.chucknorris.io/jokes/random?category=' + category
+      'https://api.chucknorris.io/jokes/random?s=' + Math.random() + '&category=' + category
     )
   }
 

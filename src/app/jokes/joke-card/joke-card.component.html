@@ -1,5 +1,5 @@
 <div class="card" [ngClass]="cardIndex % 2 === 0 ? 'even' : 'odd'">
-  <div [ngStyle]="{'background-image': 'url(' + joke.imagePath(cardIndex) + ')'}" class="img-holder">
+  <div [ngStyle]="{'background-image': 'url(' + joke.imagePath() + ')'}" class="img-holder">
   </div>
   <div class="info">
     <p *ngFor="let category of joke.categories">

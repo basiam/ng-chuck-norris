@@ -7,7 +7,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     span {
-      border-bottom: 4px solid $border-color;
+      border-bottom: 4px solid $yellow-color;
     }
   }
   .container {
@@ -32,7 +32,7 @@
     box-shadow: 0 3px 7px -1px rgba(#000, .1);
 
     &:hover {
-      box-shadow: 4px 4px 0 0 $border-color;
+      box-shadow: 4px 4px 0 0 $yellow-color;
 
       .img-holder {
         transform: scale(1.1);
@@ -73,7 +73,7 @@
     }
 
     div:nth-child(3) {
-      background: $border-color !important;
+      background: $yellow-color !important;
     }
   }
 }

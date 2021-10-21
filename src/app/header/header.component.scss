@@ -1,5 +1,4 @@
-$background-color: #fdfffc;
-$header-color: #011627;
+@import '../../assets/styles/variables.scss';
 
 header {
   width: 100%;
@@ -15,7 +14,7 @@ header {
     clear: both;
     padding: 1em 0.5em;
     li.active a {
-      color: red;
+      color: $red-color;
     }
     a {
       text-decoration: none;

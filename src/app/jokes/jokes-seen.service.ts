@@ -19,11 +19,11 @@ export class JokesSeenService {
 
   saveJokes(category: string, jokes: Joke[]) {
     const storedJokes = this.jokesByCategory[category] || [];
-    for (let i = 0; i < jokes.length; i++) {
-      if (!storedJokes.some((e) => e.id === jokes[i].id)) {
-        storedJokes.push(jokes[i]);
-      }
-    }
-    localStorage.setItem(category, JSON.stringify(storedJokes));
+    // for (let i = 0; i < jokes.length; i++) {
+    //   if (!storedJokes.some((e) => e.id === jokes[i].id)) {
+    //     storedJokes.push(jokes[i]);
+    //   }
+    // }
+    localStorage.setItem(category, JSON.stringify(storedJokes.concat(jokes)));
   }
 }

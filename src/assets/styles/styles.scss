@@ -11,7 +11,7 @@ body {
   margin-bottom: 6rem;
 	width: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #f1f1f1;
+  background: $body-color;
   text-rendering: optimizeLegibility;
 }
 h1, h2 {

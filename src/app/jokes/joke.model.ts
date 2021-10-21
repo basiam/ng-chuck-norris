@@ -14,16 +14,24 @@ export class Joke implements JokeObject {
     public value: string
   ) { }
 
-  imagePath(offset: number) {
+  imagePath() {
     const category = this.categories[0];
-    const index = 200 + offset;
+    const index = this.getNumericId() + 200;
     switch (category) {
       case 'animal':
         return 'http://placekitten.com/' + index + '/' + index;
       case 'food':
-        return 'https://lorempixel.com/400/' + index + '/food/';
+        if (index % 7 == 0) {
+          return '/assets/images/food.jpeg'
+        } else {
+          return 'https://lorempixel.com/400/' + index + '/food/';
+        }
       default:
         return 'https://placeimg.com/300/200/animals/grayscale';
     }
+  }
+
+  getNumericId() {
+    return +this.id.match(/\d+/) ? +this.id.match(/\d+/)[0][0] : 7;
   }
 }

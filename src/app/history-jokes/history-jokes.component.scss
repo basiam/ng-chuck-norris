@@ -3,9 +3,9 @@
 .history {
   h2 {
     color: $font-color;
-    font-size: 150%;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    font-size: 3em;
+    margin-top: 2rem;
+    margin-bottom: rem;
     span {
       border-bottom: 4px solid $red-color;
     }
@@ -15,12 +15,12 @@
     flex-direction: row;
     margin-bottom: 20px;
     flex-wrap: wrap;
-    column-gap: 2em;
-    row-gap: 1em;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
   }
 
-  @media only screen and (max-width: 1300px) {
-    .food .container {
+  @media only screen and (max-width: 1260px) {
+    .container {
       justify-content: space-around;
     }
   }
@@ -57,17 +57,20 @@
       padding: 1.5rem 1rem;
       font-size: 14px;
       line-height: 150%;
+
     }
     .info p {
       margin: 0px;
-      background: red;
-      padding: 0.5em 0.5rem 0.5rem 1rem;
+      background-color: $header-color;
+      padding: 0.5em 0.5rem 1rem 1rem;
       width: 100%;
     }
     .category-link, .category-link:visited {
       color: #fff;
       text-decoration: none;
-      margin-right: 5px;
+      margin-right: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 4px solid $red-color;
 
     }
   }
