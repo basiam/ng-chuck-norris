@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Joke } from './joke.model';
+import { Joke, JokeObject } from './joke.model';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class JokesSeenService {
     const oldJokes = localStorage.getItem(category);
     if (!oldJokes) return [];
 
-    this.jokesByCategory[category] = JSON.parse(oldJokes).map((x: Joke) => new Joke(x.categories, x.created_at, x.id, x.value));
+    this.jokesByCategory[category] = JSON.parse(oldJokes).map((x: JokeObject) => new Joke(x.categories, x.created_at, x.id, x.value));
     return this.jokesByCategory[category];
   }
 

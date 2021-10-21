@@ -1,4 +1,11 @@
-export class Joke {
+export interface JokeObject {
+  categories: string[];
+  created_at: string;
+  id: string;
+  value: string;
+}
+
+export class Joke implements JokeObject {
 
   constructor(
     public categories: string[],

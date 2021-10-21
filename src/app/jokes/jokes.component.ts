@@ -29,7 +29,7 @@ export class JokesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.category = this.router.url.split('/')[1];
 
-    this.subscription = this.jokesAPIService.jokesLoaded
+    this.subscription = this.jokesAPIService.fetchJokes(this.category)
       .subscribe(
         (jokes: Joke[]) => {
           this.jokes = jokes;
@@ -41,7 +41,6 @@ export class JokesComponent implements OnInit, OnDestroy {
         }
       );
 
-    this.jokesAPIService.fetchJokes(this.category);
     this.oldJokes = this.jokesSeenService.getJokes(this.category);
     this.oldJokesAreLoading = false;
 

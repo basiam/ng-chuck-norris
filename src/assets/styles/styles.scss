@@ -25,15 +25,21 @@ h1, h2 {
 }
 
 .error-message-box {
-  width: 964px;
-  margin: 0 auto;
+  margin: rem auto;
 
   .error-message-text {
     color: $red-color;
+    text-align: center;
   }
 
   &.error-not-found {
     margin-top: 100px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 4rem auto;
   }
 }
 

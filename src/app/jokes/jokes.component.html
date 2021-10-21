@@ -1,5 +1,7 @@
 <div class="wrapper">
-  <h2><span>Latest facts</span> about {{category}}</h2>
+  <h2 *ngIf="!error">
+    <span>Latest facts</span> about {{category}}
+  </h2>
   <app-error-message [errorMessage]="error"></app-error-message>
 
   <app-loading-spinner *ngIf="jokesAreLoading"></app-loading-spinner>
