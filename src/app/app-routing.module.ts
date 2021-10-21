@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'history', component: HistoryJokesComponent },
   { path: 'food', component: FoodJokesComponent },
   { path: 'error', component: JokesComponent },
-  { path: '**', component: ErrorPageComponent },
+  { path: '**', component: ErrorPageComponent }
 ];
 
 @NgModule({

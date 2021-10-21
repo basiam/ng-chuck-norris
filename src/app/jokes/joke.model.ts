@@ -1,3 +1,6 @@
+const SHOW_CHUCK_NUMER = 7;
+const DEFAULT_INDEX = 44;
+
 export interface JokeObject {
   categories: string[];
   created_at: string;
@@ -18,20 +21,20 @@ export class Joke implements JokeObject {
     const category = this.categories[0];
     const index = this.getNumericId() + 200;
     switch (category) {
-      case 'animal':
-        return 'http://placekitten.com/' + index + '/' + index;
-      case 'food':
-        if (index % 7 == 0) {
-          return '/assets/images/food.jpeg'
-        } else {
-          return 'https://lorempixel.com/400/' + index + '/food/';
-        }
-      default:
-        return 'https://placeimg.com/300/200/animals/grayscale';
+    case 'animal':
+      return `http://placekitten.com/${index}/${index}`;
+    case 'food':
+      if (index % SHOW_CHUCK_NUMER == 0) {
+        return '/assets/images/food.jpeg';
+      }
+      return `https://lorempixel.com/400/${index}/food/`;
+
+    default:
+      return 'https://placeimg.com/300/200/animals/grayscale';
     }
   }
 
   getNumericId() {
-    return +this.id.match(/\d+/) ? +this.id.match(/\d+/)[0][0] : 7;
+    return +this.id.match(/\d+/) ? +this.id.match(/\d+/)[0].slice(0, 2) : DEFAULT_INDEX;
   }
 }

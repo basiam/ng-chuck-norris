@@ -7,7 +7,7 @@ export class PlacekittenPipe implements PipeTransform {
 
   transform(value: number): string {
     const index: number = 200 + value;
-    return 'http://placekitten.com/' + index + '/' + index;
+    return `http://placekitten.com/${index}/${index}`;
   };
 }
 

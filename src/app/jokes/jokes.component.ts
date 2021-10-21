@@ -29,13 +29,13 @@ export class JokesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.category = this.router.url.split('/')[1];
 
-    this.subscription = this.jokesAPIService.fetchJokes(this.category)
-      .subscribe(
+    this.subscription = this.jokesAPIService.fetchJokes(this.category).
+      subscribe(
         (jokes: Joke[]) => {
           this.jokes = jokes;
           this.jokesAreLoading = false;
         },
-        (errorMessage) => {
+        errorMessage => {
           this.jokesAreLoading = false;
           this.error = errorMessage;
         }

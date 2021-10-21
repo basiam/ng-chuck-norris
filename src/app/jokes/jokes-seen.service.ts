@@ -7,11 +7,14 @@ import { Joke, JokeObject } from './joke.model';
 })
 export class JokesSeenService {
   jokesByCategory: { [category: string]: Joke[] } = {};
+
   constructor() { }
 
   getJokes(category: string) {
     const oldJokes = localStorage.getItem(category);
-    if (!oldJokes) return [];
+    if (!oldJokes) {
+      return [];
+    }
 
     this.jokesByCategory[category] = JSON.parse(oldJokes).map((x: JokeObject) => new Joke(x.categories, x.created_at, x.id, x.value));
     return this.jokesByCategory[category];

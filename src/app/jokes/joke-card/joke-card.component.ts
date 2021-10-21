@@ -8,8 +8,8 @@ import { Joke } from '../joke.model';
 })
 export class JokeCardComponent {
   @Input() joke: Joke;
-  @Input() cardIndex: number;
 
+  @Input() cardIndex: number;
 
 
 }
