@@ -13,7 +13,7 @@ header {
   nav {
     clear: both;
     padding: 1em 0.5em;
-    li.active a {
+    li.active a, .navbar-header.active a {
       color: $red-color;
     }
     a {

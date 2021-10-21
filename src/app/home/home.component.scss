@@ -20,9 +20,16 @@ ul {
   padding: 0;
   justify-content: space-around;
   li {
+     margin-bottom: 1rem;
      list-style-type: none;
   }
 }
+@media only screen and (max-width: 900px) {
+  ul {
+      flex-direction: column;
+  }
+}
+
 
 .home-link {
   display: block;
@@ -75,8 +82,14 @@ ul {
     max-width: 220px;
   }
 }
- @media only screen and (max-width: 1300px) {
+ @media only screen and (max-width: 1200px) {
     .chuck-info {
-      columns: auto auto;
+       columns: auto 4;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .chuck-info {
+       display: none;
     }
   }

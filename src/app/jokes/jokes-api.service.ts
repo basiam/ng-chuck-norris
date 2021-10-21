@@ -20,7 +20,7 @@ export class JokesAPIService {
 
   fetchJokes(category: string) {
     return forkJoin(
-      [this.fetchJoke(category), this.fetchJoke(category), this.fetchJoke(category), this.fetchJoke(category), this.fetchJoke(category)]
+      [...Array(5)].map((_, i) => this.fetchJoke(category))
     ).pipe(
       catchError(this.handleError),
       map((jokes: JokeObject[]) => {
@@ -36,7 +36,7 @@ export class JokesAPIService {
   }
 
   fetchJoke(category: string) {
-    // hack to prevent Safari from catching request
+    // ?s= added as a hack to prevent Safari from using catched request
     return this.http.get<JokeObject>(
       'https://api.chucknorris.io/jokes/random?s=' + Math.random() + '&category=' + category
     )
